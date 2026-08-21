@@ -1,0 +1,12 @@
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Local editor settings
+.vscode/
+
+# Training Data or documents
+/calibration_images/
+docs/
+/pupil_masks/
+/training_data/
