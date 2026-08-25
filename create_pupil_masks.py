@@ -6,9 +6,9 @@ import cv2
 import numpy as np
 
 
-ANNOTATIONS_PATH = Path("pupil_training_labelled_json.json")
-IMAGE_DIR = Path("training_data")
-OUTPUT_DIR = Path("pupil_masks")
+ANNOTATIONS_PATH = Path("images_to_remask/remasked_pupils_24Aug2026.json")
+IMAGE_DIR = Path("images_to_remask")
+OUTPUT_DIR = Path("remasked_pupils")
 
 
 def render_mask(image_shape, regions):
@@ -24,7 +24,7 @@ def render_mask(image_shape, regions):
             axes = (round(shape["rx"]), round(shape["ry"]))
             angle_degrees = math.degrees(shape.get("theta", 0.0))
             cv2.ellipse(mask, center, axes, angle_degrees, 0, 360, 255, -1)
-        elif shape_name == "polyline":
+        elif shape_name in ("polyline", "polygon"):
             points = np.column_stack(
                 (shape["all_points_x"], shape["all_points_y"])
             ).astype(np.int32)

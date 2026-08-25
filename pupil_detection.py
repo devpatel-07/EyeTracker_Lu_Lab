@@ -23,8 +23,18 @@ PUPIL_GRAPH_HISTORY_SECONDS = 10.0
 PUPIL_GRAPH_BASELINE_SECONDS = 5.0
 MIN_PYE3D_CONFIDENCE = 0.60
 
+# Saccade detection. The velocity threshold is the standard I-VT value; raise
+# it if the trace is noisy, lower it to catch smaller movements. Peak velocity
+# is only trustworthy above roughly 120 fps -- at 30 fps a saccade spans one or
+# two samples, so amplitude and saccade rate are the usable measures.
+SACCADE_VELOCITY_THRESHOLD_DEG_S = 30.0
+SACCADE_MIN_AMPLITUDE_DEG = 1.0
+
 PROJECT_DIR = Path(__file__).resolve().parent
-ML_MODEL_PATH = PROJECT_DIR / "models" / "pupil_unet_best.pt"
+# Fine-tuned 2026-08-25 on the original set plus 22 remasked new-camera frames.
+# Scores 0.957 dice on held-out new-camera images against the previous model's
+# 0.632, with no loss on the original camera or on blink detection.
+ML_MODEL_PATH = PROJECT_DIR / "models" / "finetuned_2026-08-25" / "pupil_unet_best.pt"
 ML_MASK_THRESHOLD = 0.5
 
 # These can point to independent calibration files after both cameras are
@@ -44,8 +54,8 @@ RIGHT_CAMERA_YAW_DEGREES = -35.0
 
 # Shift x/y independently when an eye is positioned differently in either
 # camera. The complete rectangle must remain inside its video frame.
-LEFT_EYE_RECT = {"x": 0, "y": 50, "w": 980, "h": 700}
-RIGHT_EYE_RECT = {"x": 100, "y": 50, "w": 980, "h": 700}
+LEFT_EYE_RECT = {"x": 0, "y": 50, "w": 1080, "h": 648}
+RIGHT_EYE_RECT = {"x": 0, "y": 50, "w": 1080, "h": 648}
 
 
 def access_file(side=""):
@@ -125,6 +135,8 @@ def main():
             min_confidence=MIN_PYE3D_CONFIDENCE,
             graph_history_seconds=PUPIL_GRAPH_HISTORY_SECONDS,
             graph_baseline_seconds=PUPIL_GRAPH_BASELINE_SECONDS,
+            saccade_velocity_threshold_deg_s=SACCADE_VELOCITY_THRESHOLD_DEG_S,
+            saccade_min_amplitude_deg=SACCADE_MIN_AMPLITUDE_DEG,
         )
         right_pipeline = EyeVideoPipeline(
             side="right",
@@ -137,6 +149,8 @@ def main():
             min_confidence=MIN_PYE3D_CONFIDENCE,
             graph_history_seconds=PUPIL_GRAPH_HISTORY_SECONDS,
             graph_baseline_seconds=PUPIL_GRAPH_BASELINE_SECONDS,
+            saccade_velocity_threshold_deg_s=SACCADE_VELOCITY_THRESHOLD_DEG_S,
+            saccade_min_amplitude_deg=SACCADE_MIN_AMPLITUDE_DEG,
         )
 
         if ENABLE_3D_VIEWER:
@@ -181,6 +195,16 @@ def main():
                 ("left", left_output),
                 ("right", right_output),
             ):
+                event = output.saccade_event
+                if event is not None:
+                    print(
+                        f"{side} saccade: amplitude {event.amplitude_deg:.2f} deg, "
+                        f"peak {event.peak_velocity_deg_s:.1f} deg/s, "
+                        f"mean {event.mean_velocity_deg_s:.1f} deg/s, "
+                        f"duration {event.duration_s * 1000.0:.0f} ms, "
+                        f"{event.sample_count} sample(s)"
+                    )
+
                 if (
                     output.coordinates is not None
                     and output.timestamp_s - last_model_log_s[side] >= 1.0
@@ -233,6 +257,14 @@ def main():
             cv2.imshow(
                 "right_pupil_dilation",
                 right_pipeline.render_graph(),
+            )
+            cv2.imshow(
+                "left_saccade_velocity",
+                left_pipeline.render_saccade_graph(),
+            )
+            cv2.imshow(
+                "right_saccade_velocity",
+                right_pipeline.render_saccade_graph(),
             )
             if viewer is not None and not viewer.update(
                 left_output.coordinates,

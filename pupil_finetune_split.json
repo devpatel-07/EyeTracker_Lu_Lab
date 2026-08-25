@@ -1,0 +1,1132 @@
+{
+  "base_manifest_summary": {
+    "train": {
+      "total": 84,
+      "pupil": 79,
+      "blink": 5
+    },
+    "validation": {
+      "total": 31,
+      "pupil": 21,
+      "blink": 10
+    }
+  },
+  "holdout": 5,
+  "seed": 42,
+  "train": [
+    {
+      "filename": "image_1.jpg",
+      "image": "training_data/image_1.jpg",
+      "mask": "pupil_masks/image_1.png",
+      "image_number": 1,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_2.jpg",
+      "image": "training_data/image_2.jpg",
+      "mask": "pupil_masks/image_2.png",
+      "image_number": 2,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_3.jpg",
+      "image": "training_data/image_3.jpg",
+      "mask": "pupil_masks/image_3.png",
+      "image_number": 3,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_4.jpg",
+      "image": "training_data/image_4.jpg",
+      "mask": "pupil_masks/image_4.png",
+      "image_number": 4,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_5.jpg",
+      "image": "training_data/image_5.jpg",
+      "mask": "pupil_masks/image_5.png",
+      "image_number": 5,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_6.jpg",
+      "image": "training_data/image_6.jpg",
+      "mask": "pupil_masks/image_6.png",
+      "image_number": 6,
+      "blink": true,
+      "source": "original"
+    },
+    {
+      "filename": "image_7.jpg",
+      "image": "training_data/image_7.jpg",
+      "mask": "pupil_masks/image_7.png",
+      "image_number": 7,
+      "blink": true,
+      "source": "original"
+    },
+    {
+      "filename": "image_8.jpg",
+      "image": "training_data/image_8.jpg",
+      "mask": "pupil_masks/image_8.png",
+      "image_number": 8,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_9.jpg",
+      "image": "training_data/image_9.jpg",
+      "mask": "pupil_masks/image_9.png",
+      "image_number": 9,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_10.jpg",
+      "image": "training_data/image_10.jpg",
+      "mask": "pupil_masks/image_10.png",
+      "image_number": 10,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_11.jpg",
+      "image": "training_data/image_11.jpg",
+      "mask": "pupil_masks/image_11.png",
+      "image_number": 11,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_12.jpg",
+      "image": "training_data/image_12.jpg",
+      "mask": "pupil_masks/image_12.png",
+      "image_number": 12,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_13.jpg",
+      "image": "training_data/image_13.jpg",
+      "mask": "pupil_masks/image_13.png",
+      "image_number": 13,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_14.jpg",
+      "image": "training_data/image_14.jpg",
+      "mask": "pupil_masks/image_14.png",
+      "image_number": 14,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_15.jpg",
+      "image": "training_data/image_15.jpg",
+      "mask": "pupil_masks/image_15.png",
+      "image_number": 15,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_16.jpg",
+      "image": "training_data/image_16.jpg",
+      "mask": "pupil_masks/image_16.png",
+      "image_number": 16,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_17.jpg",
+      "image": "training_data/image_17.jpg",
+      "mask": "pupil_masks/image_17.png",
+      "image_number": 17,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_18.jpg",
+      "image": "training_data/image_18.jpg",
+      "mask": "pupil_masks/image_18.png",
+      "image_number": 18,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_19.jpg",
+      "image": "training_data/image_19.jpg",
+      "mask": "pupil_masks/image_19.png",
+      "image_number": 19,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_20.jpg",
+      "image": "training_data/image_20.jpg",
+      "mask": "pupil_masks/image_20.png",
+      "image_number": 20,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_21.jpg",
+      "image": "training_data/image_21.jpg",
+      "mask": "pupil_masks/image_21.png",
+      "image_number": 21,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_22.jpg",
+      "image": "training_data/image_22.jpg",
+      "mask": "pupil_masks/image_22.png",
+      "image_number": 22,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_23.jpg",
+      "image": "training_data/image_23.jpg",
+      "mask": "pupil_masks/image_23.png",
+      "image_number": 23,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_24.jpg",
+      "image": "training_data/image_24.jpg",
+      "mask": "pupil_masks/image_24.png",
+      "image_number": 24,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_25.jpg",
+      "image": "training_data/image_25.jpg",
+      "mask": "pupil_masks/image_25.png",
+      "image_number": 25,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_26.jpg",
+      "image": "training_data/image_26.jpg",
+      "mask": "pupil_masks/image_26.png",
+      "image_number": 26,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_27.jpg",
+      "image": "training_data/image_27.jpg",
+      "mask": "pupil_masks/image_27.png",
+      "image_number": 27,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_28.jpg",
+      "image": "training_data/image_28.jpg",
+      "mask": "pupil_masks/image_28.png",
+      "image_number": 28,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_29.jpg",
+      "image": "training_data/image_29.jpg",
+      "mask": "pupil_masks/image_29.png",
+      "image_number": 29,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_30.jpg",
+      "image": "training_data/image_30.jpg",
+      "mask": "pupil_masks/image_30.png",
+      "image_number": 30,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_31.jpg",
+      "image": "training_data/image_31.jpg",
+      "mask": "pupil_masks/image_31.png",
+      "image_number": 31,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_32.jpg",
+      "image": "training_data/image_32.jpg",
+      "mask": "pupil_masks/image_32.png",
+      "image_number": 32,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_33.jpg",
+      "image": "training_data/image_33.jpg",
+      "mask": "pupil_masks/image_33.png",
+      "image_number": 33,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_34.jpg",
+      "image": "training_data/image_34.jpg",
+      "mask": "pupil_masks/image_34.png",
+      "image_number": 34,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_35.jpg",
+      "image": "training_data/image_35.jpg",
+      "mask": "pupil_masks/image_35.png",
+      "image_number": 35,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_36.jpg",
+      "image": "training_data/image_36.jpg",
+      "mask": "pupil_masks/image_36.png",
+      "image_number": 36,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_37.jpg",
+      "image": "training_data/image_37.jpg",
+      "mask": "pupil_masks/image_37.png",
+      "image_number": 37,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_38.jpg",
+      "image": "training_data/image_38.jpg",
+      "mask": "pupil_masks/image_38.png",
+      "image_number": 38,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_39.jpg",
+      "image": "training_data/image_39.jpg",
+      "mask": "pupil_masks/image_39.png",
+      "image_number": 39,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_40.jpg",
+      "image": "training_data/image_40.jpg",
+      "mask": "pupil_masks/image_40.png",
+      "image_number": 40,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_41.jpg",
+      "image": "training_data/image_41.jpg",
+      "mask": "pupil_masks/image_41.png",
+      "image_number": 41,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_42.jpg",
+      "image": "training_data/image_42.jpg",
+      "mask": "pupil_masks/image_42.png",
+      "image_number": 42,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_43.jpg",
+      "image": "training_data/image_43.jpg",
+      "mask": "pupil_masks/image_43.png",
+      "image_number": 43,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_44.jpg",
+      "image": "training_data/image_44.jpg",
+      "mask": "pupil_masks/image_44.png",
+      "image_number": 44,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_45.jpg",
+      "image": "training_data/image_45.jpg",
+      "mask": "pupil_masks/image_45.png",
+      "image_number": 45,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_46.jpg",
+      "image": "training_data/image_46.jpg",
+      "mask": "pupil_masks/image_46.png",
+      "image_number": 46,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_47.jpg",
+      "image": "training_data/image_47.jpg",
+      "mask": "pupil_masks/image_47.png",
+      "image_number": 47,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_48.jpg",
+      "image": "training_data/image_48.jpg",
+      "mask": "pupil_masks/image_48.png",
+      "image_number": 48,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_49.jpg",
+      "image": "training_data/image_49.jpg",
+      "mask": "pupil_masks/image_49.png",
+      "image_number": 49,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_50.jpg",
+      "image": "training_data/image_50.jpg",
+      "mask": "pupil_masks/image_50.png",
+      "image_number": 50,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_55.jpg",
+      "image": "training_data/image_55.jpg",
+      "mask": "pupil_masks/image_55.png",
+      "image_number": 55,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_60.jpg",
+      "image": "training_data/image_60.jpg",
+      "mask": "pupil_masks/image_60.png",
+      "image_number": 60,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_65.jpg",
+      "image": "training_data/image_65.jpg",
+      "mask": "pupil_masks/image_65.png",
+      "image_number": 65,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_69.jpg",
+      "image": "training_data/image_69.jpg",
+      "mask": "pupil_masks/image_69.png",
+      "image_number": 69,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_73.jpg",
+      "image": "training_data/image_73.jpg",
+      "mask": "pupil_masks/image_73.png",
+      "image_number": 73,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_74.jpg",
+      "image": "training_data/image_74.jpg",
+      "mask": "pupil_masks/image_74.png",
+      "image_number": 74,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_75.jpg",
+      "image": "training_data/image_75.jpg",
+      "mask": "pupil_masks/image_75.png",
+      "image_number": 75,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_76.jpg",
+      "image": "training_data/image_76.jpg",
+      "mask": "pupil_masks/image_76.png",
+      "image_number": 76,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_78.jpg",
+      "image": "training_data/image_78.jpg",
+      "mask": "pupil_masks/image_78.png",
+      "image_number": 78,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_79.jpg",
+      "image": "training_data/image_79.jpg",
+      "mask": "pupil_masks/image_79.png",
+      "image_number": 79,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_81.jpg",
+      "image": "training_data/image_81.jpg",
+      "mask": "pupil_masks/image_81.png",
+      "image_number": 81,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_84.jpg",
+      "image": "training_data/image_84.jpg",
+      "mask": "pupil_masks/image_84.png",
+      "image_number": 84,
+      "blink": true,
+      "source": "original"
+    },
+    {
+      "filename": "image_85.jpg",
+      "image": "training_data/image_85.jpg",
+      "mask": "pupil_masks/image_85.png",
+      "image_number": 85,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_88.jpg",
+      "image": "training_data/image_88.jpg",
+      "mask": "pupil_masks/image_88.png",
+      "image_number": 88,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_92.jpg",
+      "image": "training_data/image_92.jpg",
+      "mask": "pupil_masks/image_92.png",
+      "image_number": 92,
+      "blink": true,
+      "source": "original"
+    },
+    {
+      "filename": "image_93.jpg",
+      "image": "training_data/image_93.jpg",
+      "mask": "pupil_masks/image_93.png",
+      "image_number": 93,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_96.jpg",
+      "image": "training_data/image_96.jpg",
+      "mask": "pupil_masks/image_96.png",
+      "image_number": 96,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_99.jpg",
+      "image": "training_data/image_99.jpg",
+      "mask": "pupil_masks/image_99.png",
+      "image_number": 99,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_102.jpg",
+      "image": "training_data/image_102.jpg",
+      "mask": "pupil_masks/image_102.png",
+      "image_number": 102,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_105.jpg",
+      "image": "training_data/image_105.jpg",
+      "mask": "pupil_masks/image_105.png",
+      "image_number": 105,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_106.jpg",
+      "image": "training_data/image_106.jpg",
+      "mask": "pupil_masks/image_106.png",
+      "image_number": 106,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_107.jpg",
+      "image": "training_data/image_107.jpg",
+      "mask": "pupil_masks/image_107.png",
+      "image_number": 107,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_108.jpg",
+      "image": "training_data/image_108.jpg",
+      "mask": "pupil_masks/image_108.png",
+      "image_number": 108,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_109.jpg",
+      "image": "training_data/image_109.jpg",
+      "mask": "pupil_masks/image_109.png",
+      "image_number": 109,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_110.jpg",
+      "image": "training_data/image_110.jpg",
+      "mask": "pupil_masks/image_110.png",
+      "image_number": 110,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_111.jpg",
+      "image": "training_data/image_111.jpg",
+      "mask": "pupil_masks/image_111.png",
+      "image_number": 111,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_113.jpg",
+      "image": "training_data/image_113.jpg",
+      "mask": "pupil_masks/image_113.png",
+      "image_number": 113,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_117.jpg",
+      "image": "training_data/image_117.jpg",
+      "mask": "pupil_masks/image_117.png",
+      "image_number": 117,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_118.jpg",
+      "image": "training_data/image_118.jpg",
+      "mask": "pupil_masks/image_118.png",
+      "image_number": 118,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_121.jpg",
+      "image": "training_data/image_121.jpg",
+      "mask": "pupil_masks/image_121.png",
+      "image_number": 121,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_122.jpg",
+      "image": "training_data/image_122.jpg",
+      "mask": "pupil_masks/image_122.png",
+      "image_number": 122,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_124.jpg",
+      "image": "training_data/image_124.jpg",
+      "mask": "pupil_masks/image_124.png",
+      "image_number": 124,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_167.jpg",
+      "image": "training_data/image_167.jpg",
+      "mask": "pupil_masks/image_167.png",
+      "image_number": 167,
+      "blink": true,
+      "source": "original"
+    },
+    {
+      "filename": "image_225.jpg",
+      "image": "training_data/image_225.jpg",
+      "mask": "pupil_masks/image_225.png",
+      "image_number": 225,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_236.jpg",
+      "image": "images_to_remask/image_236.jpg",
+      "mask": "remasked_pupils/image_236.png",
+      "image_number": 236,
+      "blink": false,
+      "source": "remasked"
+    },
+    {
+      "filename": "image_237.jpg",
+      "image": "images_to_remask/image_237.jpg",
+      "mask": "remasked_pupils/image_237.png",
+      "image_number": 237,
+      "blink": false,
+      "source": "remasked"
+    },
+    {
+      "filename": "image_263.jpg",
+      "image": "images_to_remask/image_263.jpg",
+      "mask": "remasked_pupils/image_263.png",
+      "image_number": 263,
+      "blink": false,
+      "source": "remasked"
+    },
+    {
+      "filename": "image_264.jpg",
+      "image": "images_to_remask/image_264.jpg",
+      "mask": "remasked_pupils/image_264.png",
+      "image_number": 264,
+      "blink": false,
+      "source": "remasked"
+    },
+    {
+      "filename": "image_266.jpg",
+      "image": "images_to_remask/image_266.jpg",
+      "mask": "remasked_pupils/image_266.png",
+      "image_number": 266,
+      "blink": false,
+      "source": "remasked"
+    },
+    {
+      "filename": "image_267.jpg",
+      "image": "images_to_remask/image_267.jpg",
+      "mask": "remasked_pupils/image_267.png",
+      "image_number": 267,
+      "blink": false,
+      "source": "remasked"
+    },
+    {
+      "filename": "image_271.jpg",
+      "image": "images_to_remask/image_271.jpg",
+      "mask": "remasked_pupils/image_271.png",
+      "image_number": 271,
+      "blink": false,
+      "source": "remasked"
+    },
+    {
+      "filename": "image_274.jpg",
+      "image": "images_to_remask/image_274.jpg",
+      "mask": "remasked_pupils/image_274.png",
+      "image_number": 274,
+      "blink": false,
+      "source": "remasked"
+    },
+    {
+      "filename": "image_288.jpg",
+      "image": "images_to_remask/image_288.jpg",
+      "mask": "remasked_pupils/image_288.png",
+      "image_number": 288,
+      "blink": false,
+      "source": "remasked"
+    },
+    {
+      "filename": "image_289.jpg",
+      "image": "images_to_remask/image_289.jpg",
+      "mask": "remasked_pupils/image_289.png",
+      "image_number": 289,
+      "blink": false,
+      "source": "remasked"
+    },
+    {
+      "filename": "image_290.jpg",
+      "image": "images_to_remask/image_290.jpg",
+      "mask": "remasked_pupils/image_290.png",
+      "image_number": 290,
+      "blink": false,
+      "source": "remasked"
+    },
+    {
+      "filename": "image_291.jpg",
+      "image": "images_to_remask/image_291.jpg",
+      "mask": "remasked_pupils/image_291.png",
+      "image_number": 291,
+      "blink": false,
+      "source": "remasked"
+    },
+    {
+      "filename": "image_298.jpg",
+      "image": "images_to_remask/image_298.jpg",
+      "mask": "remasked_pupils/image_298.png",
+      "image_number": 298,
+      "blink": false,
+      "source": "remasked"
+    },
+    {
+      "filename": "image_299.jpg",
+      "image": "images_to_remask/image_299.jpg",
+      "mask": "remasked_pupils/image_299.png",
+      "image_number": 299,
+      "blink": false,
+      "source": "remasked"
+    },
+    {
+      "filename": "image_300.jpg",
+      "image": "images_to_remask/image_300.jpg",
+      "mask": "remasked_pupils/image_300.png",
+      "image_number": 300,
+      "blink": false,
+      "source": "remasked"
+    },
+    {
+      "filename": "image_301.jpg",
+      "image": "images_to_remask/image_301.jpg",
+      "mask": "remasked_pupils/image_301.png",
+      "image_number": 301,
+      "blink": false,
+      "source": "remasked"
+    },
+    {
+      "filename": "image_302.jpg",
+      "image": "images_to_remask/image_302.jpg",
+      "mask": "remasked_pupils/image_302.png",
+      "image_number": 302,
+      "blink": false,
+      "source": "remasked"
+    }
+  ],
+  "validation": [
+    {
+      "filename": "image_262.jpg",
+      "image": "training_data/image_262.jpg",
+      "mask": "pupil_masks/image_262.png",
+      "image_number": 262,
+      "blink": true,
+      "source": "original"
+    },
+    {
+      "filename": "image_278.jpg",
+      "image": "training_data/image_278.jpg",
+      "mask": "pupil_masks/image_278.png",
+      "image_number": 278,
+      "blink": true,
+      "source": "original"
+    },
+    {
+      "filename": "image_289.jpg",
+      "image": "training_data/image_289.jpg",
+      "mask": "pupil_masks/image_289.png",
+      "image_number": 289,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_298.jpg",
+      "image": "training_data/image_298.jpg",
+      "mask": "pupil_masks/image_298.png",
+      "image_number": 298,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_305.jpg",
+      "image": "training_data/image_305.jpg",
+      "mask": "pupil_masks/image_305.png",
+      "image_number": 305,
+      "blink": true,
+      "source": "original"
+    },
+    {
+      "filename": "image_310.jpg",
+      "image": "training_data/image_310.jpg",
+      "mask": "pupil_masks/image_310.png",
+      "image_number": 310,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_330.jpg",
+      "image": "training_data/image_330.jpg",
+      "mask": "pupil_masks/image_330.png",
+      "image_number": 330,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_333.jpg",
+      "image": "training_data/image_333.jpg",
+      "mask": "pupil_masks/image_333.png",
+      "image_number": 333,
+      "blink": true,
+      "source": "original"
+    },
+    {
+      "filename": "image_334.jpg",
+      "image": "training_data/image_334.jpg",
+      "mask": "pupil_masks/image_334.png",
+      "image_number": 334,
+      "blink": true,
+      "source": "original"
+    },
+    {
+      "filename": "image_335.jpg",
+      "image": "training_data/image_335.jpg",
+      "mask": "pupil_masks/image_335.png",
+      "image_number": 335,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_350.jpg",
+      "image": "training_data/image_350.jpg",
+      "mask": "pupil_masks/image_350.png",
+      "image_number": 350,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_365.jpg",
+      "image": "training_data/image_365.jpg",
+      "mask": "pupil_masks/image_365.png",
+      "image_number": 365,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_366.jpg",
+      "image": "training_data/image_366.jpg",
+      "mask": "pupil_masks/image_366.png",
+      "image_number": 366,
+      "blink": true,
+      "source": "original"
+    },
+    {
+      "filename": "image_375.jpg",
+      "image": "training_data/image_375.jpg",
+      "mask": "pupil_masks/image_375.png",
+      "image_number": 375,
+      "blink": true,
+      "source": "original"
+    },
+    {
+      "filename": "image_376.jpg",
+      "image": "training_data/image_376.jpg",
+      "mask": "pupil_masks/image_376.png",
+      "image_number": 376,
+      "blink": true,
+      "source": "original"
+    },
+    {
+      "filename": "image_398.jpg",
+      "image": "training_data/image_398.jpg",
+      "mask": "pupil_masks/image_398.png",
+      "image_number": 398,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_406.jpg",
+      "image": "training_data/image_406.jpg",
+      "mask": "pupil_masks/image_406.png",
+      "image_number": 406,
+      "blink": true,
+      "source": "original"
+    },
+    {
+      "filename": "image_445.jpg",
+      "image": "training_data/image_445.jpg",
+      "mask": "pupil_masks/image_445.png",
+      "image_number": 445,
+      "blink": true,
+      "source": "original"
+    },
+    {
+      "filename": "image_450.jpg",
+      "image": "training_data/image_450.jpg",
+      "mask": "pupil_masks/image_450.png",
+      "image_number": 450,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_451.jpg",
+      "image": "training_data/image_451.jpg",
+      "mask": "pupil_masks/image_451.png",
+      "image_number": 451,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_452.jpg",
+      "image": "training_data/image_452.jpg",
+      "mask": "pupil_masks/image_452.png",
+      "image_number": 452,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_453.jpg",
+      "image": "training_data/image_453.jpg",
+      "mask": "pupil_masks/image_453.png",
+      "image_number": 453,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_454.jpg",
+      "image": "training_data/image_454.jpg",
+      "mask": "pupil_masks/image_454.png",
+      "image_number": 454,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_455.jpg",
+      "image": "training_data/image_455.jpg",
+      "mask": "pupil_masks/image_455.png",
+      "image_number": 455,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_456.jpg",
+      "image": "training_data/image_456.jpg",
+      "mask": "pupil_masks/image_456.png",
+      "image_number": 456,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_457.jpg",
+      "image": "training_data/image_457.jpg",
+      "mask": "pupil_masks/image_457.png",
+      "image_number": 457,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_458.jpg",
+      "image": "training_data/image_458.jpg",
+      "mask": "pupil_masks/image_458.png",
+      "image_number": 458,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_459.jpg",
+      "image": "training_data/image_459.jpg",
+      "mask": "pupil_masks/image_459.png",
+      "image_number": 459,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_460.jpg",
+      "image": "training_data/image_460.jpg",
+      "mask": "pupil_masks/image_460.png",
+      "image_number": 460,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_461.jpg",
+      "image": "training_data/image_461.jpg",
+      "mask": "pupil_masks/image_461.png",
+      "image_number": 461,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_462.jpg",
+      "image": "training_data/image_462.jpg",
+      "mask": "pupil_masks/image_462.png",
+      "image_number": 462,
+      "blink": false,
+      "source": "original"
+    },
+    {
+      "filename": "image_238.jpg",
+      "image": "images_to_remask/image_238.jpg",
+      "mask": "remasked_pupils/image_238.png",
+      "image_number": 238,
+      "blink": false,
+      "source": "remasked"
+    },
+    {
+      "filename": "image_265.jpg",
+      "image": "images_to_remask/image_265.jpg",
+      "mask": "remasked_pupils/image_265.png",
+      "image_number": 265,
+      "blink": false,
+      "source": "remasked"
+    },
+    {
+      "filename": "image_272.jpg",
+      "image": "images_to_remask/image_272.jpg",
+      "mask": "remasked_pupils/image_272.png",
+      "image_number": 272,
+      "blink": false,
+      "source": "remasked"
+    },
+    {
+      "filename": "image_292.jpg",
+      "image": "images_to_remask/image_292.jpg",
+      "mask": "remasked_pupils/image_292.png",
+      "image_number": 292,
+      "blink": false,
+      "source": "remasked"
+    },
+    {
+      "filename": "image_440.jpg",
+      "image": "images_to_remask/image_440.jpg",
+      "mask": "remasked_pupils/image_440.png",
+      "image_number": 440,
+      "blink": false,
+      "source": "remasked"
+    }
+  ],
+  "summary": {
+    "train": {
+      "total": 101,
+      "pupil": 96,
+      "blink": 5,
+      "remasked": 17,
+      "original": 84
+    },
+    "validation": {
+      "total": 36,
+      "pupil": 26,
+      "blink": 10,
+      "remasked": 5,
+      "original": 31
+    }
+  }
+}

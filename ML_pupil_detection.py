@@ -1,11 +1,25 @@
-import cv2
+from pathlib import Path
 from tkinter import Tk, filedialog
+
+import cv2
 import numpy as np
 
+from video_frame_transform import FrameTransform
+
 # Global variables
-output_folder = "training_data"
+output_folder = "training_data_right_eye"
 saved_img_counter = 235
 frame_counter = 0
+
+# Rotation applied to each frame before cropping. Must match the rect below,
+# since the rect is defined in the rotated frame's coordinates.
+# One of: "none", "clockwise", "counterclockwise", "180"
+ROTATION = "clockwise"
+
+# Aspect ratio (1080:648 = 5:3) matches the model's 320x192 input, so the
+# resize below does not distort the pupil.
+RECT = {"x": 0, "y": 50, "w": 1080, "h": 648}
+
 
 def crop_frame(frame, rect):
 
@@ -29,7 +43,9 @@ def save_training_data(frame):
     global saved_img_counter
 
     saved_img_counter += 1
-    cv2.imwrite(f"{output_folder}/image_{saved_img_counter}.jpg", frame)
+    path = f"{output_folder}/image_{saved_img_counter}.jpg"
+    if not cv2.imwrite(path, frame):
+        raise RuntimeError(f"Could not write training image: {path}")
 
 
 
@@ -61,8 +77,16 @@ def main():
     width = int(video.get(cv2.CAP_PROP_FRAME_WIDTH))
     height = int(video.get(cv2.CAP_PROP_FRAME_HEIGHT))
     print(width, height)
-    #rect = {'x':100, 'y':100, 'w':980, 'h':600} #for 1080x1920
-    rect = {'x':0, 'y':150, 'w':500, 'h':300}
+
+    transform = FrameTransform(rotation=ROTATION)
+    rotated_width, rotated_height = transform.output_size((width, height))
+    if RECT["x"] + RECT["w"] > rotated_width or RECT["y"] + RECT["h"] > rotated_height:
+        raise ValueError(
+            f"rect {RECT} does not fit inside the "
+            f"{rotated_width}x{rotated_height} rotated frame"
+        )
+
+    Path(output_folder).mkdir(parents=True, exist_ok=True)
 
     while True:
         # read frame
@@ -71,7 +95,8 @@ def main():
         if ongoing == False:
             break
 
-        frame = crop_frame(frame, rect)
+        frame = transform.apply_frame(frame)
+        frame = crop_frame(frame, RECT)
         frame = gray_and_resize(frame)
 
         if frame_counter % 5 == 0:

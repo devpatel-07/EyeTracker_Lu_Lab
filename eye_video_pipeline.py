@@ -11,6 +11,11 @@ import numpy as np
 from binocular_geometry import BinocularCoordinates, to_shared_coordinates
 from camera_geometry import rotated_camera_matrix, undistort_ellipse
 from pupil_dilation_graph import PupilDilationGraph
+from saccade_velocity import (
+    SaccadeEvent,
+    SaccadeVelocityGraph,
+    SaccadeVelocityTracker,
+)
 from temporal_eye_model import EyeModelResult, TemporalEyeModel
 from video_frame_transform import FrameTransform
 
@@ -100,6 +105,8 @@ class EyeFrameOutput:
     coordinates: BinocularCoordinates | None
     pupil_diameter_mm: float | None
     blink: bool
+    saccade_velocity_deg_s: float | None = None
+    saccade_event: SaccadeEvent | None = None
 
 
 def validate_synchronized_captures(
@@ -156,8 +163,11 @@ class EyeVideoPipeline:
         min_confidence=0.60,
         graph_history_seconds=10.0,
         graph_baseline_seconds=5.0,
+        saccade_velocity_threshold_deg_s=30.0,
+        saccade_min_amplitude_deg=1.0,
         temporal_model_factory=TemporalEyeModel,
         graph_factory=PupilDilationGraph,
+        saccade_factory=SaccadeVelocityTracker,
     ):
         if side not in {"left", "right"}:
             raise ValueError("side must be 'left' or 'right'")
@@ -209,6 +219,12 @@ class EyeVideoPipeline:
             history_seconds=graph_history_seconds,
             baseline_seconds=graph_baseline_seconds,
         )
+        self.saccades = saccade_factory(
+            velocity_threshold_deg_s=saccade_velocity_threshold_deg_s,
+            min_amplitude_deg=saccade_min_amplitude_deg,
+            history_seconds=graph_history_seconds,
+        )
+        self.saccade_graph = SaccadeVelocityGraph(self.saccades)
         self._fallback_start_s = time.monotonic()
         self._last_timestamp_s = None
         self._graph_started = False
@@ -331,6 +347,13 @@ class EyeVideoPipeline:
         if self._graph_started:
             self.graph.add_sample(timestamp_s, pupil_diameter_mm)
 
+        # A blink or an unready model feeds None so the tracker drops any
+        # movement in progress instead of reading the recovery as a saccade.
+        saccade_event = self.saccades.add_sample(
+            timestamp_s,
+            coordinates.shared_gaze_direction if coordinates is not None else None,
+        )
+
         self._draw_status(display, coordinates is not None)
         return EyeFrameOutput(
             display=display,
@@ -339,6 +362,8 @@ class EyeVideoPipeline:
             coordinates=coordinates,
             pupil_diameter_mm=pupil_diameter_mm,
             blink=bool(blink),
+            saccade_velocity_deg_s=self.saccades.latest_velocity_deg_s,
+            saccade_event=saccade_event,
         )
 
     def _draw_status(self, display, ready):
@@ -368,3 +393,6 @@ class EyeVideoPipeline:
 
     def render_graph(self):
         return self.graph.render()
+
+    def render_saccade_graph(self):
+        return self.saccade_graph.render()

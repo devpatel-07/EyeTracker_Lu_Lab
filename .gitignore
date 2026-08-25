@@ -10,3 +10,12 @@ __pycache__/
 docs/
 /pupil_masks/
 /training_data/
+images_to_remask/
+remasked_pupils/
+training_data_right_eye/
+training_data_right_eye_pupil_masks/
+
+# Ignore video files by default; track only the cam_* recordings explicitly.
+*.mp4
+!cam_*_lefteye.mp4
+!cam_*_righteye.mp4

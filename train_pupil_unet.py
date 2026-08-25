@@ -172,6 +172,38 @@ def set_seed(seed):
         torch.cuda.manual_seed_all(seed)
 
 
+def _load_initial_weights(args, device, output_dir):
+    """Load weights from an existing checkpoint so training fine-tunes it."""
+    init_path = Path(args.init_checkpoint).resolve()
+    if not init_path.exists():
+        raise FileNotFoundError(f"Initial checkpoint not found: {init_path}")
+
+    destination = (Path(output_dir) / "pupil_unet_best.pt").resolve()
+    if init_path == destination:
+        raise ValueError(
+            f"--init-checkpoint {init_path} is the same file this run would "
+            "overwrite; pass a different --output-dir to keep the original"
+        )
+
+    checkpoint = torch.load(init_path, map_location=device, weights_only=False)
+    config = checkpoint.get("config", {})
+    checkpoint_channels = config.get("base_channels")
+    if (
+        checkpoint_channels is not None
+        and checkpoint_channels != args.base_channels
+    ):
+        raise ValueError(
+            f"checkpoint base_channels {checkpoint_channels} does not match "
+            f"--base-channels {args.base_channels}"
+        )
+
+    print(
+        f"Fine-tuning from: {init_path} "
+        f"(epoch {checkpoint.get('epoch', 'unknown')})"
+    )
+    return checkpoint["model_state_dict"]
+
+
 def train_model(args):
     manifest_path = Path(args.manifest).resolve()
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
@@ -205,6 +237,10 @@ def train_model(args):
     )
 
     model = TinyUNet(base_channels=args.base_channels).to(device)
+    if args.init_checkpoint:
+        model.load_state_dict(
+            _load_initial_weights(args, device, output_dir)
+        )
     optimizer = torch.optim.AdamW(
         model.parameters(), lr=args.learning_rate, weight_decay=1e-4
     )
@@ -288,6 +324,14 @@ def parse_args():
     parser.add_argument("--patience", type=int, default=12)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--device", choices=("auto", "cuda", "cpu"), default="auto")
+    parser.add_argument(
+        "--init-checkpoint",
+        default=None,
+        help=(
+            "load weights from this checkpoint before training, turning the "
+            "run into a fine-tune instead of training from scratch"
+        ),
+    )
     return parser.parse_args()
 
 
